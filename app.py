@@ -8,7 +8,8 @@ import sys
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-mongo = PyMongo(app, uri="mongodb://localhost:27017/shortease")
+app.config["MONGO_URI"] = "mongodb://localhost:27017/stock_data"
+mongo = PyMongo(app)
 
 
 # Route to render index.html template using data from Mongo
@@ -24,7 +25,8 @@ def index():
 def scrape():
 
     # Run the scrape function
-     = scrape_wsj.scrape_info()
+    wsj = mongo.db.wsj
+    wsj_data = scrape_wsj.scrape_all()
     print(wsj)
     
     # Update the Mongo database using update and upsert=True
