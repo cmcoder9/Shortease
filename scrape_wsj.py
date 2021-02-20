@@ -9,7 +9,7 @@ import finnhub
 def scrape_all():
     # Initiate headless driver for deployment
     browser = Browser("chrome", executable_path="chromedriver", headless=True)
-    client = pymongo.MongoClient("mongodb+srv://Shortease2021:kmWfnLz47thnG4t@cluster0.ofhmi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    # client = pymongo.MongoClient("mongodb+srv://Shortease2021:kmWfnLz47thnG4t@cluster0.ofhmi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     db = client.test
     Headline_List= wsj_news(browser)
 
