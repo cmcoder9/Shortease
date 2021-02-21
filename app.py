@@ -23,6 +23,9 @@ def index():
     wsj = mongo.db.wsj_data.find_one()
     return render_template("index.html", shortease_html= wsj)
 
+#create routes for data
+# @app.route("/GMEData")
+
 # Route that will trigger the scrape function
 @app.route("/scrape")
 def scrape():
