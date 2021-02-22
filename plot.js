@@ -57,7 +57,7 @@ function chooseAMC() {
         ul.append("li").text(`Stock Ticker: AMC`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
-        ul.append("li").text(`Pct Change: ${((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100}%`);
+        ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${data.High_price.max()}`);
         ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
         });
@@ -128,7 +128,7 @@ function chooseAMZN() {
         ul.append("li").text(`Stock Ticker: AMZN`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
-        ul.append("li").text(`Pct Change: ${((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100}%`);
+        ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${data.High_price.max()}`);
         ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
         });
@@ -185,7 +185,7 @@ function chooseDIS() {
         ul.append("li").text(`Stock Ticker: DIS`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
-        ul.append("li").text(`Pct Change: ${((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100}%`);
+        ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${data.High_price.max()}`);
         ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
         });
@@ -242,7 +242,7 @@ function chooseDOGE() {
         ul.append("li").text(`Stock Ticker: DOGE`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[129].Closing_price}`);
-        ul.append("li").text(`Pct Change: ${((data[129].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100}%`);
+        ul.append("li").text(`Pct Change: ${(((data[129].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${data.High_price.max()}`);
         ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
         });
@@ -299,7 +299,7 @@ function chooseGME() {
         ul.append("li").text(`Stock Ticker: GME`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
-        ul.append("li").text(`Pct Change: ${((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100}%`);
+        ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${data.High_price.max()}`);
         ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
         });
@@ -357,7 +357,7 @@ function chooseVTSAX() {
         ul.append("li").text(`Stock Ticker: VTSAX`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[95].Closing_price}`);
-        ul.append("li").text(`Pct Change: ${((data[95].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100}%`);
+        ul.append("li").text(`Pct Change: ${(((data[95].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${data.High_price.max()}`);
         ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
         });
@@ -402,5 +402,26 @@ function chooseVTSAX() {
     });
 };
 
-chooseAMZN();
-// -------------------------------------------------------------------
+// A function that will return the correct chooseSTOCK function when the dropdown is selected
+function chooseStock (select) {
+
+    if (select === 'AMZN') {
+        return chooseAMZN();
+    }
+    else if (select === 'DIS') {
+        return chooseDIS();
+    }
+    else if (select === 'DOGE') {
+        return chooseDOGE();
+    }
+    else if (dropdown === 'GME') {
+        chooseGME();
+    }
+    else if (dropdown === 'VTSAX') {
+        return chooseVTSAX();
+    }
+    else {
+        return chooseAMC();
+    }
+};
+chooseStock();
