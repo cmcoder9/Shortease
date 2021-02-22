@@ -1,39 +1,3 @@
-// function CSVread() {
-
-//     d3.csv("GME.csv").then(function (GME) {
-//         console.log("GME")
-//         console.log(GME)
-//     });
-
-//     d3.csv("AMC.csv").then(function (AMC) {
-//         console.log("AMC")
-//         console.log(AMC)
-//     });
-
-//     d3.csv("AMZN.csv").then(function (AMZN) {
-//         console.log("AMZN")
-//         console.log(AMZN)
-//     });
-
-//     d3.csv("DIS.csv").then(function (DIS) {
-//         console.log("DIS")
-//         console.log(DIS)
-//     });
-
-//     d3.csv("DOGE.csv").then(function (DOGE) {
-//         console.log("DOGE")
-//         console.log(DOGE)
-//     });
-
-//     d3.csv("VTSAX.csv").then(function (VTSAX) {
-//         console.log("VTSAX")
-//         console.log(VTSAX)
-//     });
-// };
-
-// CSVread();
-
-// -------------------------------------------------------------------
 // Use d3 to select the dropdown menu
 var dropdown = d3.select('#selDataset');
 
@@ -54,13 +18,26 @@ function chooseAMC() {
         list.html("");
         var ul = list.append("ul");
 
+        // Convert the csv objects into floats and create array to hold the floats
+        var highPrice = [];
+        var lowPrice = [];
+
+        for (var i = 0; i < data.length; i++) {
+            highPrice.push(parseFloat(data[i].High_price, 10))
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            lowPrice.push(parseFloat(data[i].Low_price, 10))
+        }
+
         ul.append("li").text(`Stock Ticker: AMC`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
-        ul.append("li").text(`High Price: ${data.High_price.max()}`);
-        ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
+        ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
+        ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
         });
+
     // Open csv
     Plotly.d3.csv('AMC.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys 
@@ -125,12 +102,24 @@ function chooseAMZN() {
         list.html("");
         var ul = list.append("ul");
 
+        // Convert the csv objects into floats and create array to hold the floats
+        var highPrice = [];
+        var lowPrice = [];
+
+        for (var i = 0; i < data.length; i++) {
+            highPrice.push(parseFloat(data[i].High_price, 10))
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            lowPrice.push(parseFloat(data[i].Low_price, 10))
+        }
+
         ul.append("li").text(`Stock Ticker: AMZN`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
-        ul.append("li").text(`High Price: ${data.High_price.max()}`);
-        ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
+        ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
+        ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
         });
     // Open csv
     Plotly.d3.csv('AMZN.csv', function (err, rows) {
@@ -182,12 +171,24 @@ function chooseDIS() {
         list.html("");
         var ul = list.append("ul");
 
+        // Convert the csv objects into floats and create array to hold the floats
+        var highPrice = [];
+        var lowPrice = [];
+
+        for (var i = 0; i < data.length; i++) {
+            highPrice.push(parseFloat(data[i].High_price, 10))
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            lowPrice.push(parseFloat(data[i].Low_price, 10))
+        }
+
         ul.append("li").text(`Stock Ticker: DIS`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
-        ul.append("li").text(`High Price: ${data.High_price.max()}`);
-        ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
+        ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
+        ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
         });
     // Open csv
     Plotly.d3.csv('DIS.csv', function (err, rows) {
@@ -239,12 +240,24 @@ function chooseDOGE() {
         list.html("");
         var ul = list.append("ul");
 
+        // Convert the csv objects into floats and create array to hold the floats
+        var highPrice = [];
+        var lowPrice = [];
+
+        for (var i = 0; i < data.length; i++) {
+            highPrice.push(parseFloat(data[i].High_price, 10))
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            lowPrice.push(parseFloat(data[i].Low_price, 10))
+        }
+
         ul.append("li").text(`Stock Ticker: DOGE`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[129].Closing_price}`);
         ul.append("li").text(`Pct Change: ${(((data[129].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
-        ul.append("li").text(`High Price: ${data.High_price.max()}`);
-        ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
+        ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
+        ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
         });
     // Open csv
     Plotly.d3.csv('DOGE.csv', function (err, rows) {
@@ -296,12 +309,24 @@ function chooseGME() {
         list.html("");
         var ul = list.append("ul");
 
+        // Convert the csv objects into floats and create array to hold the floats
+        var highPrice = [];
+        var lowPrice = [];
+
+        for (var i = 0; i < data.length; i++) {
+            highPrice.push(parseFloat(data[i].High_price, 10))
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            lowPrice.push(parseFloat(data[i].Low_price, 10))
+        }
+
         ul.append("li").text(`Stock Ticker: GME`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[96].Closing_price}`);
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
-        ul.append("li").text(`High Price: ${data.High_price.max()}`);
-        ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
+        ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
+        ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
         });
     // Open csv
     Plotly.d3.csv('GME.csv', function (err, rows) {
@@ -354,12 +379,24 @@ function chooseVTSAX() {
         list.html("");
         var ul = list.append("ul");
 
+        // Convert the csv objects into floats and create array to hold the floats
+        var highPrice = [];
+        var lowPrice = [];
+
+        for (var i = 0; i < data.length; i++) {
+            highPrice.push(parseFloat(data[i].High_price, 10))
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            lowPrice.push(parseFloat(data[i].Low_price, 10))
+        }
+
         ul.append("li").text(`Stock Ticker: VTSAX`);
         ul.append("li").text(`First Day Open: ${data[0].Opening_price}`);
         ul.append("li").text(`Last Day Close: ${data[95].Closing_price}`);
         ul.append("li").text(`Pct Change: ${(((data[95].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
-        ul.append("li").text(`High Price: ${data.High_price.max()}`);
-        ul.append("li").text(`Low Price: ${data.Low_price.min()}`)
+        ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
+        ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
         });
     // Open csv
     Plotly.d3.csv('VTSAX.csv', function (err, rows) {
@@ -403,7 +440,7 @@ function chooseVTSAX() {
 };
 
 // A function that will return the correct chooseSTOCK function when the dropdown is selected
-function chooseStock (select) {
+function optionChanged (select) {
 
     if (select === 'AMZN') {
         return chooseAMZN();
@@ -414,14 +451,13 @@ function chooseStock (select) {
     else if (select === 'DOGE') {
         return chooseDOGE();
     }
-    else if (dropdown === 'GME') {
-        chooseGME();
+    else if (select === 'GME') {
+        return chooseGME();
     }
-    else if (dropdown === 'VTSAX') {
+    else if (select === 'VTSAX') {
         return chooseVTSAX();
     }
     else {
         return chooseAMC();
     }
 };
-chooseStock();
