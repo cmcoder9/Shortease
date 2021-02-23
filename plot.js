@@ -257,7 +257,7 @@ function chooseDIS() {
         Plotly.newPlot('bar', data, layout);
     });
 };
-chooseDIS()
+chooseDIS();
 
 // A function for when 'DOGE' ticker is selected
 function chooseDOGE() {
@@ -340,7 +340,7 @@ function chooseDOGE() {
         Plotly.newPlot('bar', data, layout);
     });
 };
-chooseDOGE()
+chooseDOGE();
 
 // A function for when 'GME' ticker is selected
 function chooseGME() {
@@ -424,7 +424,7 @@ function chooseGME() {
     });
 
 };
-chooseGME()
+chooseGME();
 
 // A function for when 'VTSAX' ticker is selected
 function chooseVTSAX() {
@@ -507,10 +507,10 @@ function chooseVTSAX() {
         Plotly.newPlot('bar', data, layout);
     });
 };
-chooseVTSAX()
+chooseVTSAX();
 
 // A function that will return the correct chooseSTOCK function when the dropdown is selected
-function optionChanged(select) {
+function chooseStock(select) {
 
     if (select === 'AMZN') {
         return chooseAMZN();
@@ -531,3 +531,4 @@ function optionChanged(select) {
         return chooseAMC();
     }
 };
+chooseStock();
