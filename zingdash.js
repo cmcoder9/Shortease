@@ -367,8 +367,7 @@ d3.csv('all_csv.csv').then(data=>{
           },
           series: [
             {
-              text: 'Kenmore',
-              //values: [69, 68, 54, 48, 70, 74, 98, 70, 72, 68, 49, 69],
+              text: 'AMC',
               values: data.map(row=>parseFloat(row.AMC)), 
               lineColor: '#4dbac0',
               lineWidth: '2px',
@@ -383,8 +382,7 @@ d3.csv('all_csv.csv').then(data=>{
               shadow: false
             },
             {
-              text: 'Craftsman',
-              //values: [51, 53, 47, 60, 48, 52, 75, 52, 55, 47, 60, 48],
+              text: 'GME',
               values: data.map(row=>parseFloat(row.GME)), 
               lineColor: '#25a6f7',
               lineWidth: '2px',
