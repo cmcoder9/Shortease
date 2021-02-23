@@ -8,6 +8,9 @@
   <title>Shortease</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='stylesheet' href='zing.css'>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 </head>
 
 <body>
@@ -35,13 +38,10 @@
       <div class="col-md-5">
         <div id="bar"></div>
       </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <div id="bubble"></div>
+      <div id="myChart" class="chart--container">
+        <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>         
       </div>
     </div>
   </div>
@@ -49,9 +49,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-  <!-- <script src="app.js"></script> -->
+  <script src='zingdash.js'></script> 
   <script src="plot.js"></script>
-  <!-- <script src="./static/js/bonus.js"></script> -->
   
 </body>
 
