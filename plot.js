@@ -36,7 +36,7 @@ function chooseAMC() {
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
-        });
+    });
 
     // Open csv
     Plotly.d3.csv('AMC.csv', function (err, rows) {
@@ -77,8 +77,8 @@ function chooseAMC() {
                 pad: 4
             },
             yaxis: {
-                autorange: true, 
-              },
+                autorange: true,
+            },
             dragmode: 'zoom',
             showlegend: false,
             xaxis: {
@@ -120,7 +120,7 @@ function chooseAMZN() {
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
-        });
+    });
     // Open csv
     Plotly.d3.csv('AMZN.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys 
@@ -132,10 +132,10 @@ function chooseAMZN() {
         // build the trace
         var trace2 = {
             x: unpack(rows, 'Date'),
-            close: unpack(rows, 'AMZN.Closing_price'),
-            high: unpack(rows, 'AMZN.High_price'),
-            low: unpack(rows, 'AMZN.Low_price'),
-            open: unpack(rows, 'AMZN.Opening_price'),
+            close: unpack(rows, 'Closing_price'),
+            high: unpack(rows, 'High_price'),
+            low: unpack(rows, 'Low_price'),
+            open: unpack(rows, 'Opening_price'),
 
             // cutomise colors
             increasing: { line: { color: 'black' } },
@@ -149,6 +149,19 @@ function chooseAMZN() {
         var data = [trace2];
         // build layout
         var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            yaxis: {
+                autorange: true,
+            },
             dragmode: 'zoom',
             showlegend: false,
             xaxis: {
@@ -161,6 +174,7 @@ function chooseAMZN() {
         Plotly.newPlot('bar', data, layout);
     });
 };
+chooseAMZN();
 
 // A function for when 'DIS' ticker is selected
 function chooseDIS() {
@@ -189,7 +203,7 @@ function chooseDIS() {
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
-        });
+    });
     // Open csv
     Plotly.d3.csv('DIS.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
@@ -201,10 +215,10 @@ function chooseDIS() {
         // build the trace
         var trace3 = {
             x: unpack(rows, 'Date'),
-            close: unpack(rows, 'DIS.Closing_price'),
-            high: unpack(rows, 'DIS.High_price'),
-            low: unpack(rows, 'DIS.Low_price'),
-            open: unpack(rows, 'DIS.Opening_price'),
+            close: unpack(rows, 'Closing_price'),
+            high: unpack(rows, 'High_price'),
+            low: unpack(rows, 'Low_price'),
+            open: unpack(rows, 'Opening_price'),
 
             // cutomise colors
             increasing: { line: { color: 'black' } },
@@ -218,6 +232,19 @@ function chooseDIS() {
         var data = [trace3];
         // build layout
         var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            yaxis: {
+                autorange: true, 
+              },
             dragmode: 'zoom',
             showlegend: false,
             xaxis: {
@@ -230,6 +257,7 @@ function chooseDIS() {
         Plotly.newPlot('bar', data, layout);
     });
 };
+chooseDIS()
 
 // A function for when 'DOGE' ticker is selected
 function chooseDOGE() {
@@ -258,7 +286,7 @@ function chooseDOGE() {
         ul.append("li").text(`Pct Change: ${(((data[129].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
-        });
+    });
     // Open csv
     Plotly.d3.csv('DOGE.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
@@ -270,10 +298,10 @@ function chooseDOGE() {
         // build the trace
         var trace4 = {
             x: unpack(rows, 'Date'),
-            close: unpack(rows, 'DOGE.Closing_price'),
-            high: unpack(rows, 'DOGE.High_price'),
-            low: unpack(rows, 'DOGE.Low_price'),
-            open: unpack(rows, 'DOGE.Opening_price'),
+            close: unpack(rows, 'Closing_price'),
+            high: unpack(rows, 'High_price'),
+            low: unpack(rows, 'Low_price'),
+            open: unpack(rows, 'Opening_price'),
 
             // cutomise colors
             increasing: { line: { color: 'black' } },
@@ -287,6 +315,19 @@ function chooseDOGE() {
         var data = [trace4];
         // build layout
         var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            yaxis: {
+                autorange: true, 
+              },
             dragmode: 'zoom',
             showlegend: false,
             xaxis: {
@@ -299,6 +340,7 @@ function chooseDOGE() {
         Plotly.newPlot('bar', data, layout);
     });
 };
+chooseDOGE()
 
 // A function for when 'GME' ticker is selected
 function chooseGME() {
@@ -327,7 +369,7 @@ function chooseGME() {
         ul.append("li").text(`Pct Change: ${(((data[96].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
-        });
+    });
     // Open csv
     Plotly.d3.csv('GME.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
@@ -339,10 +381,10 @@ function chooseGME() {
         // build the trace
         var trace5 = {
             x: unpack(rows, 'Date'),
-            close: unpack(rows, 'GME.Closing_price'),
-            high: unpack(rows, 'GME.High_price'),
-            low: unpack(rows, 'GME.Low_price'),
-            open: unpack(rows, 'GME.Opening_price'),
+            close: unpack(rows, 'Closing_price'),
+            high: unpack(rows, 'High_price'),
+            low: unpack(rows, 'Low_price'),
+            open: unpack(rows, 'Opening_price'),
 
             // cutomise colors
             increasing: { line: { color: 'black' } },
@@ -356,6 +398,19 @@ function chooseGME() {
         var data = [trace5];
         // build layout
         var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            yaxis: {
+                autorange: true, 
+              },
             dragmode: 'zoom',
             showlegend: false,
             xaxis: {
@@ -367,8 +422,9 @@ function chooseGME() {
         // plot chart
         Plotly.newPlot('bar', data, layout);
     });
-        
+
 };
+chooseGME()
 
 // A function for when 'VTSAX' ticker is selected
 function chooseVTSAX() {
@@ -397,7 +453,7 @@ function chooseVTSAX() {
         ul.append("li").text(`Pct Change: ${(((data[95].Closing_price - data[0].Opening_price) / (data[0].Opening_price)) * 100).toFixed(2)}%`);
         ul.append("li").text(`High Price: ${d3.max(highPrice)}`);
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
-        });
+    });
     // Open csv
     Plotly.d3.csv('VTSAX.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
@@ -409,10 +465,10 @@ function chooseVTSAX() {
         // build the trace
         var trace6 = {
             x: unpack(rows, 'Date'),
-            close: unpack(rows, 'VTSAX.Closing_price'),
-            high: unpack(rows, 'VTSAX.High_price'),
-            low: unpack(rows, 'VTSAX.Low_price'),
-            open: unpack(rows, 'VTSAX.Opening_price'),
+            close: unpack(rows, 'Closing_price'),
+            high: unpack(rows, 'High_price'),
+            low: unpack(rows, 'Low_price'),
+            open: unpack(rows, 'Opening_price'),
 
             // cutomise colors
             increasing: { line: { color: 'black' } },
@@ -426,6 +482,19 @@ function chooseVTSAX() {
         var data = [trace6];
         // build layout
         var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            yaxis: {
+                autorange: true, 
+              },
             dragmode: 'zoom',
             showlegend: false,
             xaxis: {
@@ -438,9 +507,10 @@ function chooseVTSAX() {
         Plotly.newPlot('bar', data, layout);
     });
 };
+chooseVTSAX()
 
 // A function that will return the correct chooseSTOCK function when the dropdown is selected
-function optionChanged (select) {
+function optionChanged(select) {
 
     if (select === 'AMZN') {
         return chooseAMZN();
