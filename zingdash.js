@@ -99,7 +99,7 @@ d3.csv('all_csv.csv').then(data=>{
           },
           series: [
             {
-              values: [values: data.map(row=>parseFloat(row.AMC)),,
+              values: [150, 165, 173, 201, 185, 195, 162, 125],
               styles: [
                 {
                   backgroundColor: '#4dbac0'
@@ -370,12 +370,12 @@ d3.csv('all_csv.csv').then(data=>{
               values: data.map(row=>parseFloat(row.AMC)), 
               lineColor: '#4dbac0',
               lineWidth: '2px',
-              //marker: {
-                //backgroundColor: '#fff',
-                //borderColor: '#36a2a8',
-                //borderWidth: '1px',
-                //shadow: false,
-                //size: 2
+              marker: {
+                backgroundColor: '#fff',
+                borderColor: '#36a2a8',
+                borderWidth: '1px',
+                shadow: false,
+                size: 2
               },
               palette: 0,
               shadow: false
