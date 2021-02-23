@@ -14,7 +14,7 @@ d3.csv('all_csv.csv').then(data=>{
           x: '2%',
           y: '3%',
           title: {
-            text: 'Daily Percent Change',
+            text: 'Daily Volume',
             marginTop: '7px',
             marginLeft: '9px',
             backgroundColor: 'none',
@@ -48,7 +48,7 @@ d3.csv('all_csv.csv').then(data=>{
             margin: '45px 20px 38px 45px'
           },
           scaleX: {
-            values: ['AMC','GME','DIS', 'AMZN','VTSAX', 'DOGE'],
+            values: ['AMC','GME','DIS', 'AMZN'],
             guide: {
               visible: false
             },
@@ -68,7 +68,7 @@ d3.csv('all_csv.csv').then(data=>{
             }
           },
           scaleY: {
-            values: '0:300:100',
+            values: '0:1000000:10',
             guide: {
               rules: [
                 {
@@ -99,7 +99,7 @@ d3.csv('all_csv.csv').then(data=>{
           },
           series: [
             {
-              values: [150, 165, 173, 201, 185, 195, 162, 125],
+              values: [values: data.map(row=>parseFloat(row.AMC)),,
               styles: [
                 {
                   backgroundColor: '#4dbac0'
@@ -370,12 +370,12 @@ d3.csv('all_csv.csv').then(data=>{
               values: data.map(row=>parseFloat(row.AMC)), 
               lineColor: '#4dbac0',
               lineWidth: '2px',
-              marker: {
-                backgroundColor: '#fff',
-                borderColor: '#36a2a8',
-                borderWidth: '1px',
-                shadow: false,
-                size: 2
+              //marker: {
+                //backgroundColor: '#fff',
+                //borderColor: '#36a2a8',
+                //borderWidth: '1px',
+                //shadow: false,
+                //size: 2
               },
               palette: 0,
               shadow: false
@@ -440,6 +440,7 @@ d3.csv('all_csv.csv').then(data=>{
               palette: 4,
               shadow: false,
             },
+            
           ]
         }
       ]
@@ -451,4 +452,5 @@ d3.csv('all_csv.csv').then(data=>{
       height: '100%',
       width: '100%'
     });
+    
 });
