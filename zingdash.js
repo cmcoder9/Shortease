@@ -398,8 +398,8 @@ d3.csv('all_csv.csv').then(data=>{
               visible: true
             },
             {
-              text: 'DieHard',
-              values: [42, 43, 30, 50, 31, 48, 55, 46, 48, 32, 50, 38],
+              text: 'DIS',
+              values: data.map(row=>parseFloat(row.DIS)),
               lineColor: '#ad6bae',
               lineWidth: '2px',
               marker: {
@@ -414,8 +414,8 @@ d3.csv('all_csv.csv').then(data=>{
               visible: true
             },
             {
-              text: 'Land\'s End',
-              values: [25, 15, 26, 21, 24, 26, 33, 25, 15, 25, 22, 24],
+              text: 'AMZN',
+              values: data.map(row=>parseFloat(row.AMZN)),
               lineColor: '#f3950d',
               lineWidth: '2px',
               marker: {
@@ -426,8 +426,41 @@ d3.csv('all_csv.csv').then(data=>{
                 size: 3
               },
               palette: 3,
-              shadow: false
-            }
+              shadow: false,
+              visible: true
+            },
+            {
+              text: 'VTSAX',
+              values: data.map(row=>parseFloat(row.VTSAX)),
+              lineColor: '#f3950d',
+              lineWidth: '2px',
+              marker: {
+                backgroundColor: '#fff',
+                borderColor: '#d37e04',
+                borderWidth: '1px',
+                shadow: false,
+                size: 3
+              },
+              palette: 4,
+              shadow: false,
+              visible: true
+            },
+            {
+              text: 'DOGE',
+              values: data.map(row=>parseFloat(row.DOGE)),
+              lineColor: '#f3950d',
+              lineWidth: '2px',
+              marker: {
+                backgroundColor: '#fff',
+                borderColor: '#d37e04',
+                borderWidth: '1px',
+                shadow: false,
+                size: 3
+              },
+              palette: 5,
+              shadow: false,
+              visible: true
+            },
           ]
         }
       ]
