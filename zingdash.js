@@ -48,7 +48,7 @@ d3.csv('all_csv.csv').then(data=>{
             margin: '45px 20px 38px 45px'
           },
           scaleX: {
-            values: ['GME', 'VTSAX', 'AMZN', 'DOGE', 'AMC', 'DIS'],
+            values: ['AMC','GME','DIS', 'AMZN','VTSAX', 'DOGE'],
             guide: {
               visible: false
             },
@@ -162,7 +162,7 @@ d3.csv('all_csv.csv').then(data=>{
             }
           },
           scaleX: {
-            values: ['GME', 'VTSAX', 'AMZN', 'DOGE', 'AMC', 'DIS'],
+            values: ['AMC','GME','DIS', 'AMZN','VTSAX', 'DOGE'],
             guide: {
               visible: false
             },
@@ -281,7 +281,7 @@ d3.csv('all_csv.csv').then(data=>{
             margin: '50px 25px 70px 46px'
           },
           scaleY: {
-            values: '0:100:25',
+            values: '0:400:20',
             guide: {
               alpha: 0.5,
               lineColor: '#d2dae2',
@@ -300,7 +300,6 @@ d3.csv('all_csv.csv').then(data=>{
             }
           },
           scaleX: {
-            //values: [ 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
             values:data.map(row=>row.date), 
             guide: {
               visible: false
@@ -376,7 +375,7 @@ d3.csv('all_csv.csv').then(data=>{
                 borderColor: '#36a2a8',
                 borderWidth: '1px',
                 shadow: false,
-                size: 3
+                size: 2
               },
               palette: 0,
               shadow: false
@@ -391,11 +390,10 @@ d3.csv('all_csv.csv').then(data=>{
                 borderColor: '#1993e0',
                 borderWidth: '1px',
                 shadow: false,
-                size: 3
+                size: 2
               },
               palette: 1,
               shadow: false,
-              visible: true
             },
             {
               text: 'DIS',
@@ -407,11 +405,10 @@ d3.csv('all_csv.csv').then(data=>{
                 borderColor: '#975098',
                 borderWidth: '1px',
                 shadow: false,
-                size: 3
+                size: 2
               },
               palette: 2,
               shadow: false,
-              visible: true
             },
             {
               text: 'AMZN',
@@ -423,11 +420,10 @@ d3.csv('all_csv.csv').then(data=>{
                 borderColor: '#d37e04',
                 borderWidth: '1px',
                 shadow: false,
-                size: 3
+                size: 2
               },
               palette: 3,
               shadow: false,
-              visible: true
             },
             {
               text: 'VTSAX',
@@ -439,27 +435,10 @@ d3.csv('all_csv.csv').then(data=>{
                 borderColor: '#d37e04',
                 borderWidth: '1px',
                 shadow: false,
-                size: 3
+                size: 2
               },
               palette: 4,
               shadow: false,
-              visible: true
-            },
-            {
-              text: 'DOGE',
-              values: data.map(row=>parseFloat(row.DOGE)),
-              lineColor: '#f3950d',
-              lineWidth: '2px',
-              marker: {
-                backgroundColor: '#fff',
-                borderColor: '#d37e04',
-                borderWidth: '1px',
-                shadow: false,
-                size: 3
-              },
-              palette: 5,
-              shadow: false,
-              visible: true
             },
           ]
         }
