@@ -6,22 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shortease</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>Analyzing the stock market</h1>
-        <p>Use the interactive charts below to compare funds</p>
+      <div class="col-md-12">
+        <div class="header">
+          <h1>Shortease <small>Use the interactive charts below to compare funds</small></h1>
+          </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-4">
         <div class="well">
-          <h5>Fund ticker symbol:</h5>
+          <h4>Fund ticker symbol:</h4>
           <select id="selDataset" onchange="chooseStock(this.value)"></select>
         </div>
         <div class="panel panel-primary">
