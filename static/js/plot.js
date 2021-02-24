@@ -11,7 +11,7 @@ dropdown.append('option').text('VTSAX');
 
 // A function for when 'AMC' ticker is selected
 function chooseAMC() {
-    d3.csv('AMC.csv').then(function updateTable(data) {
+    d3.csv('../static/js/AMC.csv').then(function updateTable(data) {
 
         // Depopulate the stock summary table and create new list tags
         var list = d3.select("#sample-metadata");
@@ -39,7 +39,7 @@ function chooseAMC() {
     });
 
     // Open csv
-    Plotly.d3.csv('AMC.csv', function (err, rows) {
+    Plotly.d3.csv('../static/js/AMC.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys 
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -95,7 +95,7 @@ chooseAMC();
 
 // A function for when 'AMZN' ticker is selected
 function chooseAMZN() {
-    d3.csv('AMZN.csv').then(function updateTable(data) {
+    d3.csv('../static/js/AMZN.csv').then(function updateTable(data) {
 
         // Depopulate the stock summary table and create new list tags
         var list = d3.select("#sample-metadata");
@@ -122,7 +122,7 @@ function chooseAMZN() {
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
     });
     // Open csv
-    Plotly.d3.csv('AMZN.csv', function (err, rows) {
+    Plotly.d3.csv('../static/js/AMZN.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys 
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -178,7 +178,7 @@ chooseAMZN();
 
 // A function for when 'DIS' ticker is selected
 function chooseDIS() {
-    d3.csv('DIS.csv').then(function updateTable(data) {
+    d3.csv('../static/js/DIS.csv').then(function updateTable(data) {
 
         // Depopulate the stock summary table and create new list tags
         var list = d3.select("#sample-metadata");
@@ -205,7 +205,7 @@ function chooseDIS() {
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
     });
     // Open csv
-    Plotly.d3.csv('DIS.csv', function (err, rows) {
+    Plotly.d3.csv('../static/js/DIS.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -261,7 +261,7 @@ chooseDIS();
 
 // A function for when 'DOGE' ticker is selected
 function chooseDOGE() {
-    d3.csv('DOGE.csv').then(function updateTable(data) {
+    d3.csv('../static/js/DOGE.csv').then(function updateTable(data) {
 
         // Depopulate the stock summary table and create new list tags
         var list = d3.select("#sample-metadata");
@@ -288,7 +288,7 @@ function chooseDOGE() {
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
     });
     // Open csv
-    Plotly.d3.csv('DOGE.csv', function (err, rows) {
+    Plotly.d3.csv('../static/js/DOGE.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -344,7 +344,7 @@ chooseDOGE();
 
 // A function for when 'GME' ticker is selected
 function chooseGME() {
-    d3.csv('GME.csv').then(function updateTable(data) {
+    d3.csv('../static/js/GME.csv').then(function updateTable(data) {
 
         // Depopulate the stock summary table and create new list tags
         var list = d3.select("#sample-metadata");
@@ -371,7 +371,7 @@ function chooseGME() {
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
     });
     // Open csv
-    Plotly.d3.csv('GME.csv', function (err, rows) {
+    Plotly.d3.csv('../static/js/GME.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -428,7 +428,7 @@ chooseGME();
 
 // A function for when 'VTSAX' ticker is selected
 function chooseVTSAX() {
-    d3.csv('VTSAX.csv').then(function updateTable(data) {
+    d3.csv('../static/js/VTSAX.csv').then(function updateTable(data) {
 
         // Depopulate the stock summary table and create new list tags
         var list = d3.select("#sample-metadata");
@@ -455,7 +455,7 @@ function chooseVTSAX() {
         ul.append("li").text(`Low Price: ${d3.min(lowPrice)}`)
     });
     // Open csv
-    Plotly.d3.csv('VTSAX.csv', function (err, rows) {
+    Plotly.d3.csv('../static/js/VTSAX.csv', function (err, rows) {
         // create unpacking fucntion that unpack the rows and keys
         function unpack(rows, key) {
             return rows.map(function (row) {

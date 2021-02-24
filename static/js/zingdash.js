@@ -1,4 +1,4 @@
-d3.csv('all_csv.csv').then(data=>{
+d3.csv('../static/js/all_csv.csv').then(data=>{
   console.log('test');
   console.log(data);
   let chartConfig = {

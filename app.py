@@ -36,9 +36,10 @@ def home():
     
     # Use random index to selct a doc
 #    wsj = wsj[randon_select]
-    return jsonify(wsj['0'])
+    #return jsonify(wsj['0'])
+
     # Return template and data
-   # return render_template("index.html", shortease_html= wsj)
+    return render_template("index.html", shortease_html= wsj)
 
 #create routes for data
 @app.route("/GMEData")
