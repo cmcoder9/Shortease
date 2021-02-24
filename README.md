@@ -14,9 +14,7 @@ After our data frames are cleaned up and exported as csv files, we being scrapin
 
 Next we turn our attention to JavaScript to write code that will begin the visualization process. Using D3 library, we are able to pull in csv files and create a dropdown menu, and with a combination of D3 and plotly, we create candlestick charts to show the behavior of each of the funds that are of interest.
 
-![](Images/dropdown_menu.png)
-
-![](Images/dogecoin_displayed.png)
+![](Images/dropdown_menu.png) ![](Images/dogecoin_displayed.png)
 
 Our last major visualization uses a JavaScript library called 'Zingchart', and here we are able to create a linear plot of all the stocks and show them on a single set of axis. This allows us to compare each of the stocks and see which of them were affected by the 'short squeeze'.
 
