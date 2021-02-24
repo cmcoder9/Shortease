@@ -281,7 +281,7 @@ d3.csv('../static/js/all_csv.csv').then(data=>{
             margin: '50px 25px 70px 46px'
           },
           scaleY: {
-            values: '0:400:20',
+            values: '0:3500:20',
             guide: {
               alpha: 0.5,
               lineColor: '#d2dae2',
